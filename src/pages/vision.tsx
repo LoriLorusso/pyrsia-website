@@ -196,64 +196,7 @@ export default function Overview(): JSX.Element {
             </p>
           </div>
         </div>
-
-        <div className={clsx('row text--center padding-vert--md')}>
-          <div className={clsx('col col--12 padding-bottom--md')}>
-            <h2>Where we are starting versus what the end goal is.</h2>
-          </div>
-        </div>
-
-        <div className={clsx('row text--center')}>
-          <div className={clsx('col col--4')}>
-            <p>External build system, vouched by entities</p>
-          </div>
-          <div className={clsx('col col--4')}></div>
-          <div className={clsx('col col--4')}>
-            <p>Reproducible build across the network by various nodes which perform consensus on valid the "correct" artifact to publish</p>
-          </div>
-        </div>
-
-        <div className={clsx('row text--center')}>
-          <div className={clsx('col col--4')}>
-            <p>Controlled access over who can publish packages on the network</p>
-          </div>
-          <div className={clsx('col col--4')}></div>
-          <div className={clsx('col col--4')}>
-            <p>Traceable Identities across multiple public source control platform</p>
-          </div>
-        </div>
-
-        <div className={clsx('row text--center')}>
-          <div className={clsx('col col--4')}>
-            <p>Limited support for package types. We are only focused on Docker</p>
-          </div>
-          <div className={clsx('col col--4')}></div>
-          <div className={clsx('col col--4')}>
-            <p>Full integration will all package managers</p>
-          </div>
-        </div>
-
-        <div className={clsx('row text--center')}>
-          <div className={clsx('col col--4')}>
-            <p>Heavily distributed network</p>
-          </div>
-          <div className={clsx('col col--4')}></div>
-          <div className={clsx('col col--4')}>
-            <p>Truly decentralized network</p>
-          </div>
-        </div>
-
-        <div className={clsx('row text--center')}>
-          <div className={clsx('col col--4')}>
-            <p>Fully qualified artifact references</p>
-          </div>
-          <div className={clsx('col col--4')}></div>
-          <div className={clsx('col col--4')}>
-            <p>Native support for all workflows</p>
-          </div>
-        </div>
       </div>
     </Layout >
   )
-
 };
