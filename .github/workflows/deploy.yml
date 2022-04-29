@@ -47,7 +47,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: devs-files
-          path: 'docs/*.md'
+          path: 'docs/**.md'
   deploy:
     needs: community-health-files
     runs-on: ubuntu-latest
