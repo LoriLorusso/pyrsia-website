@@ -26,6 +26,27 @@ jobs:
         with:
           name: health-files
           path: '*.md'
+  devs-hub-files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: pyrsia/pyrsia
+      - name: set custom edit URLs
+        shell: python
+        run: |
+          import os
+          for filename in glob.iglob('docs/*.md', recursive=True):
+            if file.endswith('.md'):
+              new_line = '---\ncustom_edit_url: https://github.com/pyrsia/pyrsia/edit/main/docs/{}\n---\n\n'.format(file)
+              with open(file, 'r+') as file:
+                content = file.read()
+                file.seek(0)
+                file.write(new_line + content)
+      - uses: actions/upload-artifact@v2
+        with:
+          name: devs-files
+          path: 'docs/*.md'
   deploy:
     needs: community-health-files
     runs-on: ubuntu-latest
@@ -38,6 +59,10 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: health-files
+          path: docs/developer
+      - uses: actions/download-artifact@v2
+        with:
+          name: devs-files
           path: docs/developer
       - run: |
           npm ci
